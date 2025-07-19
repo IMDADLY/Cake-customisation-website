@@ -177,7 +177,7 @@
     top: 31px;
     background: #282c3f;
   }
-  .restaurant-list {
+  .items-list {
     margin-bottom: 85px;
     display: grid;
     grid-template-columns: repeat(4, 25%);
@@ -186,22 +186,22 @@
     margin-top: 25px;
   }
   
-  .restaurant-list .place-link {
+  .items-list .item-link {
     background: #fff;
     display: block;
     text-decoration: none;
     color: inherit;
   }
-  .restaurant-list .list-item {
+  .items-list .list-item {
     padding: 25px 25px 57px;
     border: 1px solid #fff;
     contain: content;
   }
-  .restaurant-list .list-item:hover {
+  .items-list .list-item:hover {
     border-color: #d3d5df;
     box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
   }
-  .restaurant-list .item-content {
+  .items-list .item-content {
     width: 254px;
     position: relative;
   }
@@ -237,16 +237,16 @@
     border-width: 9px 0 0 9px;
   }
   
-  .place-name-div {
+  .item-name-div {
     margin-top: 14px;
   }
-  .place-name-div .name {
+  .item-name-div .name {
     font-size: 17px;
     font-weight: 500;
     /* to bring text in next line */
     word-break: break-word;
   }
-  .place-name-div .food-items {
+  .item-name-div .food-items {
     color: #686b78;
     font-size: 13px;
     margin-top: 4px;
@@ -302,7 +302,7 @@
     margin-right: 2px;
   }
   
-  .place:hover .quick-view {
+  .item:hover .quick-view {
     visibility: visible !important;
   }
   

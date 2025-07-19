@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
@@ -103,18 +104,17 @@
             <section class="restaurants">
                 <div class="container">
                     <div class="item-bar">
-                        <div class="number">1066 restaurants</div>
+                        <div class="number">56 Cakes</div>
                         <div class="filters">
-                            <div class="relevance">Relevance</div>
-                            <div class="delivery">Delivery Time</div>
-                            <div class="rating">Rating</div>
-                            <div class="cost-lh">Cost: Low to High</div>
-                            <div class="cost-hl">Cost: High to Low</div>
+                            <div class="delivery" onclick="filterBy('delivery')">Delivery Time</div>
+                            <div class="rating" onclick="filterBy('rating')">Rating</div>
+                            <div class="cost-lh" onclick="filterBy('cost-lh')">Cost: Low to High</div>
+                            <div class="cost-hl" onclick="filterBy('cost-hl')">Cost: High to Low</div>
                         </div>
                     </div>
-                    <div class="restaurant-list">
-                        <div class="place">
-                            <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="items-list" id="items">
+                        <div class="item" data-rating="3.8" data-delivery="42" data-cost="1000">
+                            <a href="/restaurants/waffld-domlur-bangalore-303446" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -128,7 +128,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div>
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">La Pino'z Pizza</div>
                                             <div class="food-items"
                                                 title="Italian, Pizzas, Fast Food, Mexican, Desserts, Beverages">
@@ -142,7 +142,7 @@
                                             <div>•</div>
                                             <div>42 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹250 FOR TWO</div>
+                                            <div class="price">₹1000 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -155,8 +155,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="4.0" data-delivery="33" data-cost="500">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -168,7 +168,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div> -->
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Bercos - If you love chinese</div>
                                             <div class="food-items"
                                             title="Chinese, Thai, Asian, Beverages, Desserts, Oriental, Seafood, Pan-Asian">Chinese, Thai, Asian, Beverages, Desserts, Oriental, Seafood, Pan-Asian</div>
@@ -181,7 +181,7 @@
                                             <div>•</div>
                                             <div>33 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹500 FOR TWO</div>
+                                            <div class="price">₹500 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -194,8 +194,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="3.9" data-delivery="34" data-cost="700">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -207,7 +207,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div>
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Wack Waffles & Brownies</div>
                                             <div class="food-items"
                                             title="Waffle, Bakery, Desserts, Beverages">Waffle, Bakery, Desserts, Beverages</div>
@@ -220,7 +220,7 @@
                                             <div>•</div>
                                             <div>34 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹250 FOR TWO</div>
+                                            <div class="price">₹700 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -233,8 +233,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="5.0" data-delivery="39" data-cost="650">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -246,7 +246,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div> -->
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Takeout Cafe</div>
                                             <div class="food-items"
                                             title="Italian-American, Fast Food, Snacks, Beverages">Italian-American, Fast Food, Snacks, Beverages</div>
@@ -259,7 +259,7 @@
                                             <div>•</div>
                                             <div>39 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹200 FOR TWO</div>
+                                            <div class="price">₹650 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -272,8 +272,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="4.7" data-delivery="40" data-cost="350">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -285,7 +285,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div> -->
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Healthy Bhukkad's</div>
                                             <div class="food-items"
                                             title="Fast Food, Snacks, Beverages">Fast Food, Snacks, Beverages</div>
@@ -298,7 +298,7 @@
                                             <div>•</div>
                                             <div>40 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹199 FOR TWO</div>
+                                            <div class="price">₹350 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -311,8 +311,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="4.6" data-delivery="56" data-cost="450">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -324,7 +324,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div> -->
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Momo Mom by Oriental Mom</div>
                                             <div class="food-items"
                                             title="Pan-Asian, Tibetan, Seafood, Chinese">Pan-Asian, Tibetan, Seafood, Chinese</div>
@@ -337,7 +337,7 @@
                                             <div>•</div>
                                             <div>56 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
+                                            <div class="price">₹450 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -350,8 +350,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="4.4" data-delivery="38" data-cost="400">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -363,7 +363,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div> -->
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Firangi Bake</div>
                                             <div class="food-items"
                                             title="Italian, Mexican, Pastas, Ice Cream">Italian, Mexican, Pastas, Ice Cream</div>
@@ -376,7 +376,7 @@
                                             <div>•</div>
                                             <div>38 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹400 FOR TWO</div>
+                                            <div class="price">₹400 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
@@ -389,8 +389,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="place">
-                            <a href="" class="place-link">
+                        <div class="item" data-rating="4.3" data-delivery="46" data-cost="900">
+                            <a href="" class="item-link">
                                 <div class="list-item">
                                     <div class="item-content">
                                         <div class="top-img">
@@ -402,7 +402,7 @@
                                         border-color: rgb(30, 32, 35) transparent;">
                                             <div class="status-title">Promoted</div>
                                         </div> -->
-                                        <div class="place-name-div">
+                                        <div class="item-name-div">
                                             <div class="name">Chili's American Grill & Bar</div>
                                             <div class="food-items"
                                             title="American, Mexican">American, Mexican</div>
@@ -415,7 +415,7 @@
                                             <div>•</div>
                                             <div>46 MINS</div>
                                             <div>•</div>
-                                            <div class="price">₹900 FOR TWO</div>
+                                            <div class="price">₹900 FOR 1 KG</div>
                                         </div>
                                         <div class="offer-div">
                                             <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
