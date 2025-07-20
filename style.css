@@ -393,3 +393,6 @@
     transform: scale(1.06);
     cursor: pointer;
 }
+img {
+    object-fit: cover;
+}
