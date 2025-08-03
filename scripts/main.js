@@ -5,8 +5,6 @@ function filterBy(criteria) {
     const getData = (el, attr) => parseFloat(el.dataset[attr]);
 
     switch(criteria) {
-      case 'delivery':
-        return getData(a, 'delivery') - getData(b, 'delivery');
       case 'rating':
         return getData(b, 'rating') - getData(a, 'rating');
       case 'cost-lh':
